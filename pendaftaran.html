@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran - Soul Travel</title>
+
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+
+      .kontainer {
+        width: 800px;
+        margin: 20px auto;
+        background-color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .kontainer:hover {
+        transform: scale(1.01);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      }
+
+      .header {
+        background-color: #1e90ff;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .header img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .menu_navigasi {
+        background-color: #1b79c1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 10px 0;
+      }
+
+      .menu_navigasi a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .menu_navigasi a:hover {
+        color: #ffeb3b;
+        transform: scale(1.1);
+      }
+
+      .konten {
+        display: flex;
+        padding: 15px;
+      }
+
+      .kiri {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .kanan {
+        flex: 2;
+        padding: 10px;
+      }
+
+      .footer {
+        background-color: #1b79c1;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+      }
+
+      .login {
+        background-color: #eaf3ff;
+        padding: 5px 10px 20px 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        font-family: "Poppins";
+      }
+
+      .login input {
+        width: 90%;
+        padding: 5px;
+        margin-bottom: 20px;
+      }
+
+      .login button {
+        width: 97%;
+        background-color: #1e90ff;
+        color: white;
+        border: none;
+        padding: 6px;
+        cursor: pointer;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-family: "Poppins";
+      }
+
+      table,
+      th,
+      td {
+        border: 5px solid #999;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      /* Kotak form pendaftaran */
+      .form-pendaftaran {
+        background-color: #eaf3ff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-pendaftaran label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+      }
+
+      .form-pendaftaran input,
+      .form-pendaftaran select,
+      .form-pendaftaran textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #bbb;
+        border-radius: 5px;
+      }
+
+      .form-pendaftaran button {
+        width: 48%;
+        background-color: #1e90ff;
+        color: white;
+        border: none;
+        padding: 8px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 15px;
+      }
+
+      .form-pendaftaran button:hover {
+        background-color: #145e97;
+      }
+
+      .tombol {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-family: "Poppins";
+      }
+
+      th,
+      td {
+        border: 3px solid #999;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        text-align: center;
+        font-size: 18px;
+      }
+
+      /* RESPONSIVE LAYOUT */
+      @media (max-width: 900px) {
+        .kontainer {
+          width: 95%;
+        }
+
+        .konten {
+          flex-direction: column;
+        }
+
+        .kiri,
+        .kanan {
+          width: 100%;
+          padding: 5px;
+        }
+
+        .login input,
+        .login button {
+          width: 100%;
+        }
+
+        table {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .menu_navigasi {
+          flex-direction: column;
+          text-align: center;
+          gap: 8px;
+        }
+
+        .form-pendaftaran button {
+          width: 100%;
+          margin-top: 10px;
+        }
+
+        .tombol {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        th,
+        td {
+          font-size: 13px;
+        }
+
+        h3,
+        h2 {
+          font-size: 22px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="kontainer">
+      <div class="header">
+        <img src="swiss.jpg" alt="Switzerland" />
+        <h1>Form Pendaftaran Wisata</h1>
+        <p>Daftarkan diri Anda dan nikmati keindahan Swiss bersama Soul Travel!</p>
+      </div>
+
+      <div class="menu_navigasi">
+        <a href="index.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Tour</a>
+        <a href="#">Schedule</a>
+        <a href="#">Destination</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="konten">
+        <div class="kiri">
+          <div class="login">
+            <h3 style="font-size: 30px"><center>LOGIN</center></h3>
+            <form>
+              <input type="text" placeholder="Username" />
+              <input type="password" placeholder="Password" />
+              <button type="submit">Masuk</button>
+            </form>
+          </div>
+
+          <table>
+            <tr>
+              <th>Paket</th>
+              <th>Harga</th>
+            </tr>
+            <tr>
+              <td>Zurich 3 Hari</td>
+              <td>Rp 30.000.000</td>
+            </tr>
+            <tr>
+              <td>Luzern 5 Hari</td>
+              <td>Rp 40.000.000</td>
+            </tr>
+            <tr>
+              <td>Jenewa 7 Hari</td>
+              <td>Rp 50.000.000</td>
+            </tr>
+            <tr>
+              <td>Basel 7 Hari</td>
+              <td>Rp 55.000.000</td>
+            </tr>
+            <tr>
+              <td>Alpen 7 Hari</td>
+              <td>Rp 70.000.000</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="kanan">
+          <div class="form-pendaftaran">
+            <h2 style="text-align: center; color: #1e90ff">Form Pendaftaran</h2>
+            <form>
+              <label>Nama Lengkap:</label>
+              <input type="text" placeholder="Masukkan nama lengkap Anda" required />
+
+              <label>Email:</label>
+              <input type="email" placeholder="Masukkan email Anda" required />
+
+              <label>No. Telepon:</label>
+              <input type="text" placeholder="Masukkan nomor telepon Anda" required />
+
+              <label>Pilih Paket Wisata:</label>
+              <select required>
+                <option value="">-- Pilih Paket --</option>
+                <option>Zurich 3 Hari - Rp 30.000.000</option>
+                <option>Luzern 5 Hari - Rp 40.000.000</option>
+                <option>Jenewa 7 Hari - Rp 50.000.000</option>
+              </select>
+
+              <label>Tanggal Keberangkatan:</label>
+              <input type="date" required />
+
+              <label>Alamat Lengkap:</label>
+              <textarea rows="5" placeholder="Tulis alamat lengkap Anda"></textarea>
+
+              <div class="tombol">
+                <button type="reset">Reset</button>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">&copy; Copyright Sukma Amalia Sari 2024020070</div>
+    </div>
+  </body>
+</html>

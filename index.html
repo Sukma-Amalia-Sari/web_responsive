@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tour and Travel</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f1f1;
+            margin: 0;
+            padding: 0;
+        }
+
+        .kontainer {
+            width: 100%;
+            margin: 20px auto;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .kontainer:hover {
+            transform: scale(1.01);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        }
+
+        .header {
+            background-color: #1e90ff;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .header img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu_navigasi {
+            background-color: #1b79c1;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .menu_navigasi a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .menu_navigasi a:hover {
+            color: #ffeb3b;
+            transform: scale(1.1);
+        }
+
+        .konten {
+            display: flex;
+            padding: 15px;
+        }
+
+        .kiri {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .kanan {
+            flex: 2;
+            padding: 10px;
+        }
+
+        .video {
+            width: 60%;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .berita1, .berita2 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            font-family: Georgia, 'Times New Roman';
+        }
+
+        .berita1, .berita2:hover {
+            transform: scale(1.02);
+        }
+
+        /* gambar di dalam teks */
+        .gambar-dalam-teks {
+            float: left;
+            margin: 0 10px 10px 0;
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .footer {
+            background-color: #1b79c1;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .login {
+            background-color: #eaf3ff;
+            padding: 5px 10px 20px 10px;
+            border-radius: 10px;
+            margin-top: 10px;
+            font-family: 'Poppins';
+        }
+
+        .login input {
+            width: 90%;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+
+        .login button {
+            width: 93%;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Poppins';
+        }
+
+        .login button:hover {
+            background-color: #145ea8;
+        }
+
+        .login .btn-daftar {
+            display: block;
+            width: 91%;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            padding: 6px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            font-family: 'Poppins';
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .login .btn-daftar:hover {
+            background-color: #145ea8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-family: 'Poppins';
+        }
+
+        table, th, td {
+            border: 5px solid #999;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 700px) {
+
+        /* menu navigasi jadi kolom */
+        .menu_navigasi {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* konten jadi kolom */
+        .konten {
+            flex-direction: column;
+        }
+
+        /* urutan elemen */
+        .kiri {
+            order: 1;
+        }
+
+        .kiri table {
+            order: 2;
+        }
+
+        .kanan {
+            order: 3;
+        }
+
+        .berita1 {
+            order: 3;
+        }
+
+        .berita2 {
+            order: 4;
+        }
+        }
+
+        @media screen and (min-width: 768px) {
+            body{background-color: #1b79c1;}
+        }
+        @media screen and (min-width: 1024px) {
+            body{background-color: white;}
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kontainer">
+        <div class="header">
+            <img src="swiss.jpg" alt="Switzerland">
+            <h1>Switzerland Travel Adventure</h1>
+            <p>“Discover the beauty of Switzerland's nature and culture with us”</p>
+        </div>
+
+        <div class="menu_navigasi">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Tour</a>
+            <a href="#">Schedule</a>
+            <a href="#">Destination</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="konten">
+            <div class="kiri">
+                <div class="login">
+                    <h3 style="font-size: 30px; text-align:center;">LOGIN</h3>
+                    <form>
+                        <input type="text" placeholder="Username">
+                        <input type="password" placeholder="Password">
+                        <button type="submit">Masuk</button>
+                    </form>
+                    <a href="pendaftaran.html" class="btn-daftar">Daftar</a>
+                </div>
+
+                <table>
+                    <tr>
+                        <th>Paket</th> <th>Harga</th>
+                    </tr>
+                    <tr>
+                        <td>Zurich 3 Hari</td> <td>Rp 30.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Luzern 5 Hari</td> <td>Rp 40.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Jenewa 7 Hari</td> <td>Rp 50.000.000</td>
+                    </tr>   
+                    <tr>
+                        <td>Basel 7 Hari</td> <td>Rp 55.000.000</td>
+                    </tr> 
+                    <tr>
+                        <td>Alpen 7 Hari</td> <td>Rp 70.000.000</td>
+                    </tr>                   
+                </table>
+            </div>
+
+            <div class="kanan">
+                <div class="berita1">
+                    <h3>Eksplorasi Kota Luzern</h3>
+                    <p style="text-align: justify;">
+                        <img src="luzern.webp" alt="Kota Luzern" class="gambar-dalam-teks">
+                        Kota Luzern memikat dengan keindahan danau dan pegunungan yang mengelilinginya, jembatan kayu bersejarah, serta nuansa klasik yang berpadu dengan sentuhan modern khas Swiss. Keindahan alamnya yang memesona menjadikannya destinasi favorit bagi wisatawan yang mencari ketenangan dan panorama menakjubkan.
+                    </p>
+                </div>
+                
+                <div class="berita2">
+                    <h3>Eksplorasi Kota Jenewa</h3>
+                    <p style="text-align: justify;">
+                        <img src="jenewa.webp" alt="Kota Jenewa" class="gambar-dalam-teks">
+                        Jenewa memancarkan pesona internasional dengan danau yang menakjubkan, taman-taman hijau, serta suasana diplomatik yang berpadu harmonis dengan kehidupan kota yang tenang. Kota ini juga menjadi pusat penting bagi organisasi dunia, mencerminkan semangat perdamaian dan kerja sama global. Jenewa memikat pengunjung dengan danau yang tenang dan panorama pegunungan Alpen yang menakjubkan.
+                    </p>
+                </div>
+
+                <video class="video" controls autoplay muted>
+                    <source src="swit.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="footer">
+            &copy; Copyright @ Sukma Amalia Sari 2024020070
+        </div>
+    </div>
+</body>
+</html>
